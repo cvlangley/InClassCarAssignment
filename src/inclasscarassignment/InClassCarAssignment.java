@@ -17,7 +17,10 @@ public class InClassCarAssignment {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Car car1 = new Car("Ford", "Explorer Sport SUV", 2013, 27630, 31998, "V-6", (float) 3.5, 290, 255, "Automatic", "All-Wheel Drive",
+        "Heated Leather Seats in Charcoal Black, Aluminum Wheels, Back-Up Camera, Satellite Radio.");
+    
+        car1.toString();
     }
     
 }

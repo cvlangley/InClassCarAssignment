@@ -10,13 +10,14 @@
  *
  * @author Chelsea Langley, Jonah Jones, Yuriy Zhlobitskyy
  */
-
+package inclasscarassignment;
 import java.time.LocalDate;
 
 public class Car {
     String make, model, features,transmissionType, driveTrain, engineType;
-    int year, mileage, engineSize, horsepower, maxTorque, askingPrice;
-    public Car(String make, String model, int year, int mileage, int askingPrice, String engineType, int engineSize, int horsepower, int maxTorque, String transmissionType, String driveTrain, String features)
+    int year, mileage, horsepower, maxTorque, askingPrice;
+    float engineSize;
+    public Car(String make, String model, int year, int mileage, int askingPrice, String engineType, float engineSize, int horsepower, int maxTorque, String transmissionType, String driveTrain, String features)
     {
         setMake(make);
         setModel(model);
@@ -171,7 +172,7 @@ public class Car {
      * This method is used to return the engine size of the car.
      * @return engineSize - the engine size of the car.
      */
-    public int getEngineSize() {
+    public float getEngineSize() {
         return engineSize;
     }// end of getEngineSize method
     
@@ -179,7 +180,7 @@ public class Car {
      * This method is used to set the engine size of the car. 
      * @param engineSize - the engine size of the car.
      */
-    public void setEngineSize(int engineSize) {
+    public void setEngineSize(float engineSize) {
         this.engineSize = engineSize;
     }// end of setEngineSize method
 
@@ -234,14 +235,13 @@ public class Car {
     /**
      * This method is an overridden toString method that is used to return the make, model, year,
      * and mileage of the car.
-     * @param car - the Car for which information needs to be returned.
      * @return carInfo - the make, model, year, and mileage of the car.
      */
-    public String toString(Car car){
+    public String toString(){
         String carInfo;
         
-        carInfo = "Car Information: /n" + "Make: " + car.getMake() + "/nModel: " + car.getModel() + "/nYear: " + car.getYear()
-                + "/nCurrent Mileage: " + car.getMileage();
+        carInfo = String.format("Car Information: /n" + "Make: " + getMake() + "/nModel: " + getModel() + "/nYear: " + getYear()
+                + "/nCurrent Mileage: " + getMileage());
         return carInfo;
     
     } // end of overriden toString method
