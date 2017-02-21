@@ -10,6 +10,9 @@
  *
  * @author Chelsea Langley, Jonah Jones, Yuriy Zhlobitskyy
  */
+
+import java.time.LocalDate;
+
 public class Car {
     String make, model, features,transmissionType, driveTrain, engineType;
     int year, mileage, engineSize, horsepower, maxTorque, askingPrice;
@@ -137,7 +140,15 @@ public class Car {
      * @param year - the year the car was manufactured
      */
     public void setYear(int year) {
-        this.year = year;
+        // make sure this car is plausible (first car made for the consumer was made in 1908)
+        LocalDate today = LocalDate.now();
+        int upperYear = today.getYear();
+      
+        if (year <= 1908 && year <= (upperYear +1)){
+            this.year = year;
+        }
+            throw new IllegalArgumentException ("The year of the car must be between 1908, when the first car was created for the consumer,"
+                    + " and " + (upperYear +1) + ".");
     }// end of setYear method
 
     /**
