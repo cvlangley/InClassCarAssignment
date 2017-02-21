@@ -16,8 +16,8 @@ import java.time.LocalDate;
 public class Car {
     String make, model, features,transmissionType, driveTrain, engineType;
     int year, mileage, horsepower, maxTorque, askingPrice;
-    float engineSize;
-    public Car(String make, String model, int year, int mileage, int askingPrice, String engineType, float engineSize, int horsepower, int maxTorque, String transmissionType, String driveTrain, String features)
+    double engineSize;
+    public Car(String make, String model, int year, int mileage, int askingPrice, String engineType, double engineSize, int horsepower, int maxTorque, String transmissionType, String driveTrain, String features)
     {
         setMake(make);
         setModel(model);
@@ -172,7 +172,7 @@ public class Car {
      * This method is used to return the engine size of the car.
      * @return engineSize - the engine size of the car.
      */
-    public float getEngineSize() {
+    public double getEngineSize() {
         return engineSize;
     }// end of getEngineSize method
     
@@ -180,7 +180,7 @@ public class Car {
      * This method is used to set the engine size of the car. 
      * @param engineSize - the engine size of the car.
      */
-    public void setEngineSize(float engineSize) {
+    public void setEngineSize(double engineSize) {
         this.engineSize = engineSize;
     }// end of setEngineSize method
 
@@ -237,6 +237,7 @@ public class Car {
      * and mileage of the car.
      * @return carInfo - the make, model, year, and mileage of the car.
      */
+    @Override
     public String toString(){
         String carInfo;
         
