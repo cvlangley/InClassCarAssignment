@@ -220,4 +220,18 @@ public class Car {
         this.askingPrice = askingPrice;
     }// end of setAskingPrice method
     
+    /**
+     * This method is an overridden toString method that is used to return the make, model, year,
+     * and mileage of the car.
+     * @param car - the Car for which information needs to be returned.
+     * @return carInfo - the make, model, year, and mileage of the car.
+     */
+    public String toString(Car car){
+        String carInfo;
+        
+        carInfo = "Car Information: /n" + "Make: " + car.getMake() + "/nModel: " + car.getModel() + "/nYear: " + car.getYear()
+                + "/nCurrent Mileage: " + car.getMileage();
+        return carInfo;
+    
+    } // end of overriden toString method
 }// end of Car class
